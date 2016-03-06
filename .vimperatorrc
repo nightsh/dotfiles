@@ -1,0 +1,26 @@
+"3.8 (created: 2013/10/13 18:08:56)
+
+set hintchars=asdfghjkl
+set complete=sl
+source! /home/victor/.vimperatorrc.local
+
+" Use <BS> to return to previous tab
+nnoremap <BS> <C-^>
+
+" Use h,l to move left,right between tabs
+nnoremap h :tabprevious<Return>
+nnoremap l :tabnext<Return>
+
+" Use <C-h>,<C-l> to move a tab one position left,right
+nnoremap <C-h> :tabmove!<Space>-1<Return>
+nnoremap <C-l> :tabmove!<Space>+1<Return>
+
+" Show-hide toolbar
+map "\\gt" :set<Space>toolbars=tabs,invbookmarks,invaddons,invnavigation<Return>
+
+nnoremap j jjj
+nnoremap k kkk
+
+colorscheme vimPgray
+
+" vim: set ft=vimperator:
