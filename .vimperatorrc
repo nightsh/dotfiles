@@ -1,26 +1,65 @@
-"3.8 (created: 2013/10/13 18:08:56)
+"3.15.0 (created: 2016/10/05 01:11:26)
 
-set hintchars=asdfghjkl
-set complete=sl
-source! /home/victor/.vimperatorrc.local
-
-" Use <BS> to return to previous tab
+cnoremap <C-c> <C-v><C-c>
+cnoremap <C-v> <C-v><C-v>
+cnoremap <S-Insert> <C-v><C-v>
+cnoremap <C-x> <C-v><C-x>
+command! sourcerc :source ~/.vimperatorrc
+command! vimperatortoggle javascript vimperatortoggle()
+highlight Bell border: 0 none; background-color: #222222;
+highlight CmdLine background: #222222; color: #afafaf; font-size: 9pt;
+highlight CompDesc color: #c6c6c6; width: 50%; font-size: 9pt;
+highlight CompItem[selected] background: #666666; color: #afafaf; 
+highlight CompResult width: 45%; overflow: hidden;font-size: 10pt; font-family: monospace; font-weight: normal;
+highlight CompTitle color: #afafaf; background: #222222; font-weight: bold;
+highlight CompTitle>* padding: 0 .5ex;
+highlight ErrorMsg color: #ffffff; background: red; font-weight: bold;
+highlight Filter font-weight: bold;color: #afafaf;
+highlight FrameIndicator background-color: #222222; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+highlight Function color: lightgreen; background: #222222;
+highlight Hint font-family: Sans; font-size: 10px; font-weight: bold; color: white; background-color: rgba(0, 0, 0, 0.5); border: solid 1px LightGray;
+highlight Hint::after content: attr(number); font-size: 20pt; font-size: 16pt; font-size: 14pt; font-size: 13pt;
+highlight HintActive background: blue; color: #f6e9e9;
+highlight HintElem background-color: #222222; color: #f6e9e9;
+highlight InfoMsg color: #afafaf; background: #222222;
+highlight LineNr color: #afafaf; background: #222222;
+highlight ModeMsg color: #afafaf; background: #222222; "CmdLine when Not in Use
+highlight MoreMsg color: #afafaf; background: #222222;
+highlight NonText color: lightblue; min-height: 16px; padding-left: 2px;
+highlight Normal color: #afafaf; background: #222222;
+highlight Number color: tan; background: #222222
+highlight Prompt background: url("chrome://liberator/skin/prompt.png"); width: 10px; background-position: center; background-repeat: no-repeat; background-color: #e0e0e0; margin-right: 2px;
+highlight PromptText color: #e0e0e0; background-color: #395475;
+highlight Question color: #ffffff; background: #222222; font-weight: bold;
+highlight StatusLine color: #ffffff; background: #000000; "font-size: 8pt;
+highlight String color: #222222; background: #afafaf;
+highlight Tag color: #222222; background: #afafaf;
+highlight Title color: #222222; background: #afafaf; font-weight: bold;
+highlight URL text-decoration: none; color: lightblue; background: inherit;
+highlight WarningMsg color: red; background: #222222;
+inoremap <C-c> <C-v><C-c>
+inoremap <C-v> <C-v><C-v>
+inoremap <S-Insert> <C-v><C-v>
+inoremap <C-x> <C-v><C-x>
+map "\\gt" :set<Space>toolbars=tabs,invbookmarks,invaddons,invnavigation<Return>
 nnoremap <BS> <C-^>
-
-" Use h,l to move left,right between tabs
 nnoremap h :tabprevious<Return>
 nnoremap l :tabnext<Return>
-
-" Use <C-h>,<C-l> to move a tab one position left,right
 nnoremap <C-h> :tabmove!<Space>-1<Return>
 nnoremap <C-l> :tabmove!<Space>+1<Return>
-
-" Show-hide toolbar
-map "\\gt" :set<Space>toolbars=tabs,invbookmarks,invaddons,invnavigation<Return>
-
 nnoremap j jjj
 nnoremap k kkk
-
-colorscheme vimPgray
+noremap <F10> :vimperatortoggle<Return>
+noremap c b
+noremap b <PageUp>
+noremap m :tabprevious<Return>
+noremap , :tabnext<Return>
+noremap q :bdelete<Return>
+noremap <C-a> <C-v><C-a>
+noremap <C-c> <C-v><C-c>
+noremap <C-v> <C-v><C-v>
+noremap <C-x> <C-v><C-x>
+set hintchars=asdfghjkl
+source! /home/victor/.vimperatorrc.local
 
 " vim: set ft=vimperator:
